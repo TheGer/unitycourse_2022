@@ -40,8 +40,15 @@ public class ShipControls : MonoBehaviour {
 
     void TurretLookAt()
     {
-        turretRotator.transform.LookAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+        Vector3 mousePos = new Vector3(Input.mousePosition.x,
+            Input.mousePosition.y, 0f);
+
+
+        turretRotator.transform.LookAt(Camera.main.ScreenToWorldPoint(mousePos));
     }
+    
+    
     
 	// Update is called once per frame
 	void Update () {
