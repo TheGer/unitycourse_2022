@@ -36,17 +36,59 @@ public class ShipControls : MonoBehaviour {
         turretRotator = transform.Find("TurretRotator");
         
 	}
-	
+
+
+    void TurretLookAt()
+    {
+        turretRotator.transform.LookAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+    }
+    
 	// Update is called once per frame
 	void Update () {
         MoveShip();
+        TurretLookAt();
 
             if(Input.GetMouseButtonDown(0))
             {
                 FireBullet();
             }
 
-	}
+            Vector3 currentViewportPoint = Camera.main.WorldToViewportPoint(transform.position);
+            
+            if (currentViewportPoint.x > 1)
+            {
+                transform.position = new Vector3(
+                    Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).x,
+                    Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).y, 0f);
+                
+            }
+
+            if (currentViewportPoint.x < 0)
+            {
+                transform.position = new Vector3(
+                    Camera.main.ViewportToWorldPoint(new Vector3(1, currentViewportPoint.y)).x,
+                    Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).y, 0f);
+            }
+            
+            if (currentViewportPoint.y > 1)
+            {
+                transform.position = new Vector3(
+                    Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).x,
+                    Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
+            }
+
+            if (currentViewportPoint.y < 0)
+            {
+                transform.position = new Vector3(
+                    Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 1)).x,
+                    Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
+            }
+
+            
+
+    }
+    
+    
 
     //this method controls ship movement and looks for axis direction
 
