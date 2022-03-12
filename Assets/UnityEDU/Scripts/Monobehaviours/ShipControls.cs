@@ -43,14 +43,19 @@ public class ShipControls : MonoBehaviour {
 
         Vector3 mousePos = new Vector3(Input.mousePosition.x,
             Input.mousePosition.y, 0f);
+        
+        // --- Fixed turret rotation by replacing LookAt with Pythagoras
+        //turretRotator.transform.LookAt(Camera.main.ScreenToWorldPoint(mousePos));
 
+        //Calculating angle using Pythagoras
+        Vector2 delta = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
+        //Setting rotation
+        transform.rotation = Quaternion.Euler(0f, 0f, angle - 90f);
 
-        turretRotator.transform.LookAt(Camera.main.ScreenToWorldPoint(mousePos));
     }
-    
-    
-    
-	// Update is called once per frame
+
+    // Update is called once per frame
 	void Update () {
         MoveShip();
         TurretLookAt();
