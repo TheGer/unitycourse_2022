@@ -10,6 +10,14 @@ public class bullet : MonoBehaviour {
 
     public bool collided = false;
 
+    private void FixedUpdate()
+    {
+        if (transform.position.keepOnScreen(Camera.main) != transform.position)
+        {
+            transform.position = transform.position.keepOnScreen(Camera.main);
+        }
+    }
+
     void OnCollisionEnter(Collision col)
     {
         collided = true;

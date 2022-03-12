@@ -7,7 +7,7 @@ public static class Vector3Extensions {
 	// Use this for initialization
 
 
-
+	
 	public static Vector3 keepOnScreen(this Vector3 pos, Camera currentCamera)
 	{
 

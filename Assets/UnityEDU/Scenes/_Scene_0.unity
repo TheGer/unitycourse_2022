@@ -312,6 +312,11 @@ Prefab:
       propertyPath: bulletAnchor
       value: 
       objectReference: {fileID: 472270244}
+    - target: {fileID: 114338393936924954, guid: 2c350f2ea6d36435b8b50bf6e3c429cb,
+        type: 2}
+      propertyPath: fireRate
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c350f2ea6d36435b8b50bf6e3c429cb, type: 2}
   m_IsPrefabParent: 0
@@ -333,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPool: []
   bullet: {fileID: 1657914042213664, guid: 0e9c239fd33d94404b671bc44ab4f6b4, type: 2}
-  poolSize: 10
+  poolSize: 25
   bulletAnchor: {fileID: 472270244}
 --- !u!1 &1854861993
 GameObject:

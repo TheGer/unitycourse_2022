@@ -14,10 +14,13 @@ public class ShipControls : MonoBehaviour
     [SerializeField]
     GameObject bullet;
 
-    [Header("How fast is your bullet?")]
-    [SerializeField]
+    //expose the fire rate for designer
+    [Header("How fast is your bullet?")] [SerializeField]
     private float fireRate = 25f;
     
+    //expose the bullet lifetime for designer
+    [Header("Set how long the bullet exists")] [Range(1, 100)] [SerializeField]
+    private float bulletLifetime = 5f;
     
     //use the rigibody to move ship around. 
     Rigidbody _rb;
@@ -30,7 +33,8 @@ public class ShipControls : MonoBehaviour
     [Header("Set ship speed here, Min 0 Max 10")] [Range(0, 10)] [SerializeField]
     private float moveSpeed;
 
-    // Use this for initialization
+    
+    
     void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
@@ -85,6 +89,14 @@ public class ShipControls : MonoBehaviour
             delta.Normalize();
             b.GetComponent<Rigidbody>().velocity = delta * fireRate;
             b.SetActive(true);
+            StartCoroutine(DestroyBullet(b, bulletLifetime));
         }
+    }
+
+
+    private IEnumerator DestroyBullet(GameObject bullet, float time)
+    {
+        yield return new WaitForSeconds(time);
+        bullet.SetActive(false);
     }
 }
