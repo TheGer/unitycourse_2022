@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class BulletPool : MonoBehaviour
 {
-    
+    private BulletPool(){}
     public static BulletPool SharedInstance;
     public List<GameObject> bulletPool;
     
