@@ -8,8 +8,10 @@ public static class Vector3Extensions {
 
 
 
-	public static void keepOnScreen(this Vector3 pos, Camera currentCamera)
+	public static Vector3 keepOnScreen(this Vector3 pos, Camera currentCamera)
 	{
+
+		
 		Vector3 currentViewportPoint = currentCamera.WorldToViewportPoint(pos);
 		
 		if (currentViewportPoint.x > 1)
@@ -41,7 +43,8 @@ public static class Vector3Extensions {
 				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
 		}
 
-		
+		return pos;
+
 	}
 
 
