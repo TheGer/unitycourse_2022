@@ -74,7 +74,7 @@ public class ShipControls : MonoBehaviour {
         xDirection = CrossPlatformInputManager.GetAxis("Horizontal");
         yDirection = CrossPlatformInputManager.GetAxis("Vertical");
         rb.velocity = new Vector3(xDirection * moveSpeed, yDirection * moveSpeed, 0);
-        this.transform.position.keepOnScreen(Camera.main);
+        transform.position.keepOnScreen(Camera.main);
         
     }
 
