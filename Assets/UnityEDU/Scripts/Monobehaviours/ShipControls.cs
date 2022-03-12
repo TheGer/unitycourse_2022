@@ -60,37 +60,7 @@ public class ShipControls : MonoBehaviour {
                 FireBullet();
             }
 
-            Vector3 currentViewportPoint = Camera.main.WorldToViewportPoint(transform.position);
-            
-            if (currentViewportPoint.x > 1)
-            {
-                transform.position = new Vector3(
-                    Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).x,
-                    Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).y, 0f);
-                
-            }
-
-            if (currentViewportPoint.x < 0)
-            {
-                transform.position = new Vector3(
-                    Camera.main.ViewportToWorldPoint(new Vector3(1, currentViewportPoint.y)).x,
-                    Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).y, 0f);
-            }
-            
-            if (currentViewportPoint.y > 1)
-            {
-                transform.position = new Vector3(
-                    Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).x,
-                    Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
-            }
-
-            if (currentViewportPoint.y < 0)
-            {
-                transform.position = new Vector3(
-                    Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 1)).x,
-                    Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
-            }
-
+          
             
 
     }
@@ -104,7 +74,8 @@ public class ShipControls : MonoBehaviour {
         xDirection = CrossPlatformInputManager.GetAxis("Horizontal");
         yDirection = CrossPlatformInputManager.GetAxis("Vertical");
         rb.velocity = new Vector3(xDirection * moveSpeed, yDirection * moveSpeed, 0);
-
+        this.transform.position.keepOnScreen(Camera.main);
+        
     }
 
     //Fire a bullet on left mouse click

@@ -7,5 +7,5 @@ public class asteroidData : ScriptableObject {
     public int asteroidSize;
     public string name;
     public int score;
-
+    public GameObject prefab;
 }
