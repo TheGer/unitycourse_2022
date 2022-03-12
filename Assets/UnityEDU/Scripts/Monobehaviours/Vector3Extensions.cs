@@ -8,40 +8,40 @@ public static class Vector3Extensions {
 
 
 
-	public static Vector3 keepOnScreen(this Vector3 pos, Camera currentCamera)
+	public static void keepOnScreen(this Vector3 pos, Camera currentCamera)
 	{
 		Vector3 currentViewportPoint = currentCamera.WorldToViewportPoint(pos);
-		Vector3 returnedPosition = pos;
+		
 		if (currentViewportPoint.x > 1)
 		{
-			returnedPosition = new Vector3(
-				Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).x,
-				Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).y, 0f);
+			pos = new Vector3(
+				currentCamera.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).x,
+				currentCamera.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).y, 0f);
 
 		}
 
 		if (currentViewportPoint.x < 0)
 		{
-			returnedPosition = new Vector3(
-				Camera.main.ViewportToWorldPoint(new Vector3(1, currentViewportPoint.y)).x,
-				Camera.main.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).y, 0f);
+			pos = new Vector3(
+				currentCamera.ViewportToWorldPoint(new Vector3(1, currentViewportPoint.y)).x,
+				currentCamera.ViewportToWorldPoint(new Vector3(0, currentViewportPoint.y)).y, 0f);
 		}
 
 		if (currentViewportPoint.y > 1)
 		{
-			returnedPosition = new Vector3(
-				Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).x,
-				Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
+			pos = new Vector3(
+				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).x,
+				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
 		}
 
 		if (currentViewportPoint.y < 0)
 		{
-			returnedPosition = new Vector3(
-				Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 1)).x,
-				Camera.main.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
+			pos= new Vector3(
+				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 1)).x,
+				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
 		}
 
-		return returnedPosition;
+		
 	}
 
 
