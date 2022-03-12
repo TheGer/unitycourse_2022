@@ -13,7 +13,6 @@ public static class Vector3Extensions {
 
 		
 		Vector3 currentViewportPoint = currentCamera.WorldToViewportPoint(pos);
-		
 		if (currentViewportPoint.x > 1)
 		{
 			pos = new Vector3(
@@ -39,8 +38,8 @@ public static class Vector3Extensions {
 		if (currentViewportPoint.y < 0)
 		{
 			pos= new Vector3(
-				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 1)).x,
-				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).y, 0f);
+				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 0)).x,
+				currentCamera.ViewportToWorldPoint(new Vector3(currentViewportPoint.x, 1)).y, 0f);
 		}
 
 		return pos;
