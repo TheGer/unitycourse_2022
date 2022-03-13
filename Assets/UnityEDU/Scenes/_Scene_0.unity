@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641186, b: 0.5748162, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,34 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &164217849
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 164217850}
-  m_Layer: 0
-  m_Name: AsteroidGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &164217850
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 164217849}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.017024457, y: 0.023425639, z: 0.0038134754}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &472270244
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +223,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 634444791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b5eef0653cc44aa1bc04372a04cced4, type: 3}
+  m_Script: {fileID: 11500000, guid: 137a049c80e1646db8784bb52b3f9bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   keepAspectRatio: 1
@@ -280,7 +252,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 726362373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6c1365cd464c46e592efb45cd361cf4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d6938811b80143b497d314309db5608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &726362376
