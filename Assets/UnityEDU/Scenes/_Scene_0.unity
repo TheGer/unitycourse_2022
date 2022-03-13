@@ -255,6 +255,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6938811b80143b497d314309db5608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroids:
+  - {fileID: 11400000, guid: 38f1c5e14e8754f3fb0f1c621b4b640c, type: 2}
+  - {fileID: 11400000, guid: 28261da08edc3436ca10047dec4c93bf, type: 2}
+  - {fileID: 11400000, guid: ccb4bc87901554c8192ef2504013fc17, type: 2}
+  numberOfClusters: 1
 --- !u!4 &726362376
 Transform:
   m_ObjectHideFlags: 0

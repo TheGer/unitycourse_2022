@@ -6,6 +6,18 @@ public static class Vector3Extensions {
 
 	// Use this for initialization
 
+	public static Vector3 randomPositionOnScreen(this Vector3 pos,Camera currentCamera)
+	{
+		Vector3 randomPosition;
+		float cameraSizeY = currentCamera.orthographicSize;
+		float cameraSizeX = cameraSizeY * currentCamera.aspect;
+
+		randomPosition = new Vector3(
+			Random.Range(-cameraSizeY, cameraSizeY),
+			Random.Range(-cameraSizeX, cameraSizeX),
+			0f);
+		return randomPosition;
+	}
 
 	
 	public static Vector3 keepOnScreen(this Vector3 pos, Camera currentCamera)

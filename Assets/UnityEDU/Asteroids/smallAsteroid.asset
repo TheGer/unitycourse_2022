@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4c3b93d91c64d20bddde5762ac1acd, type: 3}
   m_Name: smallAsteroid
   m_EditorClassIdentifier: 
-  asteroidSize: 100
-  name: small
+  asteroidSize: 1
+  asteroidName: small
   score: 10
+  asteroidprefab: {fileID: 1001075958796480, guid: 5ad76b66b7cec4762b888598c30ba931,
+    type: 2}

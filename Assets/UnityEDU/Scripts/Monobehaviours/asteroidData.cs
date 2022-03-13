@@ -5,7 +5,7 @@ using UnityEngine;
 public class asteroidData : ScriptableObject {
   
     public int asteroidSize;
-    public string name;
+    public string asteroidName;
     public int score;
-    public GameObject prefab;
+    public GameObject asteroidprefab;
 }

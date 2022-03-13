@@ -21,7 +21,13 @@ public class bullet : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         collided = true;
-        gameObject.SetActive(false);
+        if (col.collider.gameObject.tag == "Asteroid")
+        {
+            Destroy(col.collider.gameObject);
+            gameObject.SetActive(false);    
+        }
+        
+        
     }
 
     //Broken ---NEEDS FIX
