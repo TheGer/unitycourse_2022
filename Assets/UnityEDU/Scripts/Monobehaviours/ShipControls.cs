@@ -78,7 +78,7 @@ public class ShipControls : MonoBehaviour
 
     private void FireBullet()
     {
-        GameObject b = BulletPool.SharedInstance.GetAvailableBullet();
+        GameObject b = BulletPool.Instance.GetAvailableBullet();
 
         if (b != null)
         {

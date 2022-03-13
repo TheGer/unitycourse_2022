@@ -3,10 +3,9 @@ using UnityEngine;
 using System.Collections.Generic;
 
 
-public class BulletPool : MonoBehaviour
+public class BulletPool : Singleton<BulletPool>
 {
-    private BulletPool(){}
-    public static BulletPool SharedInstance;
+   
     public List<GameObject> bulletPool;
     
     [Header("Set the bullet Prefab here")][SerializeField]
@@ -17,11 +16,6 @@ public class BulletPool : MonoBehaviour
 
     [Header("BulletAnchor to collect bullets")] [SerializeField]
     private GameObject bulletAnchor;
-    
-    private void Awake()
-    {
-        SharedInstance = this;
-    }
 
     private void Start()
     {
