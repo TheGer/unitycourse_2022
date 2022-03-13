@@ -62,7 +62,6 @@ public class Resize_Sprite : MonoBehaviour
         
         sr.transform.localScale = new Vector3(horizontalratio, verticalratio);
         
-
-
     }
+    
 }

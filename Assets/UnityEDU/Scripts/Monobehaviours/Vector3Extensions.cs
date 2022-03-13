@@ -10,9 +10,8 @@ public static class Vector3Extensions {
 	
 	public static Vector3 keepOnScreen(this Vector3 pos, Camera currentCamera)
 	{
-
-		
 		Vector3 currentViewportPoint = currentCamera.WorldToViewportPoint(pos);
+
 		if (currentViewportPoint.x > 1)
 		{
 			pos = new Vector3(
@@ -77,5 +76,20 @@ public static class Vector3Extensions {
 		}
 	
 
-
+		/*----------- TO DISCUSS ----------- 
+		Alternative Approaches
+		public static Vector3 CalculateScreenBounds(Camera cam){
+			float boundsX = cam.aspect * cam.orthographicSize;
+			float boundsY = cam.orthographicSize;
+			return new Vector3(boundsX, boundsY, 1); //Multiply x and y by 2 to get screen size
+		}
+		public static Vector3 ScreenWrap(this Vector3 pos, Camera cam)
+		{
+			Vector3 viewportPos = cam.WorldToViewportPoint(pos);
+			Vector3 newPos = pos;
+			if (viewportPos.x > 1 || viewportPos.x < 0) newPos.x = -newPos.x;
+			if (viewportPos.y > 1 || viewportPos.y < 0) newPos.y = -newPos.y;
+			return newPos;
+		}
+		*/
 }
