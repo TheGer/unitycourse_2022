@@ -21,9 +21,20 @@ public class bullet : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         collided = true;
-        if (col.collider.gameObject.tag == "Asteroid")
+        if (col.collider.gameObject.CompareTag("Asteroid"))
         {
-            Destroy(col.collider.gameObject);
+            foreach (Transform childAsteroid in col.collider.gameObject.transform)
+            {
+                Debug.Log(childAsteroid.gameObject.name);
+                
+                childAsteroid.parent = null;
+                childAsteroid.gameObject.SetActive(true);
+                childAsteroid.position = transform.position;
+                ////   childAsteroid.position = col.gameObject.transform.position;
+                //   
+
+            }
+           // Destroy(col.collider.gameObject);
             gameObject.SetActive(false);    
         }
         

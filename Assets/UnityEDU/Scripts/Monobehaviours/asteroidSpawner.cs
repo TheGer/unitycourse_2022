@@ -26,22 +26,9 @@ public class asteroidSpawner : MonoBehaviour {
 		bigAsteroid.transform.position = new Vector3().randomPositionOnScreen(Camera.main);
 		bigAsteroid.AddComponent<asteroidController>();
 		bigAsteroid.GetComponent<asteroidController>().asteroidSpeed = asteroids[0].asteroidSize;
-		for (int i = 0; i < 2; i++)
-		{
-			GameObject mediumAsteroid = Instantiate(asteroids[1].asteroidprefab);
-			mediumAsteroid.transform.position = bigAsteroid.transform.position;
-			mediumAsteroid.AddComponent<asteroidController>();
-			mediumAsteroid.GetComponent<asteroidController>().asteroidSpeed = asteroids[1].asteroidSize;
-			
-			for (int j = 0; j < 2; j++)
-			{
-				GameObject smallAsteroid = Instantiate(asteroids[2].asteroidprefab);
-				smallAsteroid.transform.position = mediumAsteroid.transform.position;
-				smallAsteroid.AddComponent<asteroidController>();
-				smallAsteroid.GetComponent<asteroidController>().asteroidSpeed = asteroids[2].asteroidSize;
-				
-			}
-		}
+		bigAsteroid.GetComponent<asteroidController>().SpawnChildren(0,asteroids);
+		
+
 
 
 	}
