@@ -29,21 +29,18 @@ public class asteroidController : MonoBehaviour
 
 	public void SpawnChildren(int level,asteroidData[] asteroids)
 	{
-		Debug.Log(level);
-		
-		for (int i = 0; i < 2; i++)
-		{
-			if (level<2){
-				GameObject childAsteroid = Instantiate(asteroids[level+1].asteroidprefab,this.transform);
-				childAsteroid.transform.position = childAsteroid.transform.position;
-				childAsteroid.AddComponent<asteroidController>();
-				childAsteroid.GetComponent<asteroidController>().asteroidSpeed = asteroids[level+1].asteroidSize;
-			
-				childAsteroid.GetComponent<asteroidController>().SpawnChildren(level+1,asteroids);
-				childAsteroid.SetActive(false);
-			}
-
-		}
+		// for (int i = 0; i < 2; i++)
+		// {
+		// 	if (level<2){
+		// 		GameObject childAsteroid = Instantiate(asteroids[level].asteroidprefab,this.transform);
+		// 		childAsteroid.transform.position = transform.position;
+		// 		asteroidController controller = childAsteroid.AddComponent<asteroidController>();
+		// 		childAsteroid.GetComponent<asteroidController>().asteroidSpeed = asteroids[level].asteroidSize;
+		// 		childAsteroid.GetComponent<asteroidController>().SpawnChildren(level,asteroids);
+		// 		childAsteroid.SetActive(false);
+		// 	}
+		//
+		// }
 	}
 	
 	// Update is called once per frame
