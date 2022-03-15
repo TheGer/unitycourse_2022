@@ -18,24 +18,35 @@ public class bullet : MonoBehaviour {
         }
     }
 
+    private List<Collider> objectsCollidedWith = new List<Collider>();
+    
     void OnCollisionEnter(Collision col)
     {
         collided = true;
+       
         if (col.collider.gameObject.CompareTag("Asteroid"))
         {
-            foreach (Transform childAsteroid in col.collider.gameObject.transform)
+            objectsCollidedWith.Add(col.collider);
+         
+           
+           
+            for(int childCounter=0;childCounter<col.collider.gameObject.transform.childCount;childCounter++)
             {
+                Transform childAsteroid = col.collider.gameObject.transform.GetChild(childCounter);
                 Debug.Log(childAsteroid.gameObject.name);
                 
                 childAsteroid.parent = null;
-                childAsteroid.gameObject.SetActive(true);
                 childAsteroid.position = transform.position;
+                childAsteroid.GetComponent<asteroidController>().RandomizeDirection();
+                childAsteroid.gameObject.SetActive(true);
                 ////   childAsteroid.position = col.gameObject.transform.position;
                 //   
-
+                
             }
-           // Destroy(col.collider.gameObject);
-            gameObject.SetActive(false);    
+           // 
+           Destroy(objectsCollidedWith[0],1);
+         
+             gameObject.SetActive(false);    
         }
         
         

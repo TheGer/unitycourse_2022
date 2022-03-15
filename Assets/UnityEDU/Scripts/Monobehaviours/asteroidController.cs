@@ -9,12 +9,21 @@ public class asteroidController : MonoBehaviour
 	public float directionX,directionY;
 
 	public int asteroidLevel;
+
+	public bool hit;
+	
 	
 	// Use this for initialization
-	void Start ()
+	void Start()
+	{
+		RandomizeDirection();
+	}
+
+	public void RandomizeDirection()
 	{
 		directionX = Random.Range(-1f, 1f);
 		directionY = Random.Range(-1f, 1f);
+	
 	}
 
 
