@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: largeAsteroid
   m_EditorClassIdentifier: 
   asteroidSize: 3
+  asteroidScale: 3
   asteroidName: large
   score: 50
   asteroidprefab: {fileID: 1157362760724742, guid: bca09be0ad83949d697d2bcbff1ac93a,

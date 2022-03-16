@@ -26,7 +26,7 @@ public class asteroidData : ScriptableObject {
     */
   
   
-    public int asteroidSize = Random.Range(1, 4);
+    public int asteroidSize = 3;
     public float asteroidScale = 0.75f;
 
     public string asteroidName;

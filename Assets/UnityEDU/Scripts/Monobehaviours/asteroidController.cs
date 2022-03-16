@@ -29,23 +29,24 @@ public class asteroidController : MonoBehaviour
 
 	public void SpawnChildren(int level,asteroidData[] asteroids)
 	{
-		// for (int i = 0; i < 2; i++)
-		// {
-		// 	if (level<2){
-		// 		GameObject childAsteroid = Instantiate(asteroids[level].asteroidprefab,this.transform);
-		// 		childAsteroid.transform.position = transform.position;
-		// 		asteroidController controller = childAsteroid.AddComponent<asteroidController>();
-		// 		childAsteroid.GetComponent<asteroidController>().asteroidSpeed = asteroids[level].asteroidSize;
-		// 		childAsteroid.GetComponent<asteroidController>().SpawnChildren(level,asteroids);
-		// 		childAsteroid.SetActive(false);
-		// 	}
-		//
-		// }
+		for (int i = 0; i < 3; i++)
+		{
+			 	if (level<3){
+			 		GameObject childAsteroid = Instantiate(asteroids[level].asteroidprefab,this.transform);
+			 		childAsteroid.transform.position = transform.position;
+			 		asteroidController controller = childAsteroid.AddComponent<asteroidController>();
+					
+				childAsteroid.GetComponent<asteroidController>().asteroidSpeed = asteroids[level].asteroidSize;
+				childAsteroid.transform.localScale =  childAsteroid.transform.localScale * (asteroids[level].asteroidSize * asteroids[level].asteroidScale);
+				childAsteroid.GetComponent<asteroidController>().SpawnChildren(level+1,asteroids);
+			 		childAsteroid.SetActive(false);
+		}
+		 }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Rigidbody>().velocity = new Vector3(asteroidSpeed * directionX,asteroidSpeed * directionY);
+		GetComponent<Rigidbody>().velocity = new Vector3(asteroidSpeed * directionX,asteroidSpeed * directionY,0);
 		transform.position = transform.position.keepOnScreen(Camera.main);
 	}
 }

@@ -22,14 +22,15 @@ public class asteroidSpawner : MonoBehaviour {
 
 	void SpawnCluster()
 	{
-		int r = Random.Range(0, asteroids.Length);
+		Debug.Log(asteroids);
+		int r = 0; //Random.Range(0, asteroids.Length);
 		GameObject bigAsteroid = Instantiate(asteroids[r].asteroidprefab);
 		
 		bigAsteroid.transform.position = new Vector3().randomPositionOnScreen(Camera.main);
 		bigAsteroid.transform.localScale = bigAsteroid.transform.localScale * (asteroids[r].asteroidSize * asteroids[r].asteroidScale);
 		bigAsteroid.AddComponent<asteroidController>();
 		bigAsteroid.GetComponent<asteroidController>().asteroidSpeed = asteroids[r].asteroidSize;
-		bigAsteroid.GetComponent<asteroidController>().SpawnChildren(r,asteroids);
+		bigAsteroid.GetComponent<asteroidController>().SpawnChildren(r+1,asteroids);
 	}
 
 	

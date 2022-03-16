@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641186, b: 0.5748162, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -256,9 +256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
-  - {fileID: 11400000, guid: ccb4bc87901554c8192ef2504013fc17, type: 2}
-  - {fileID: 11400000, guid: 28261da08edc3436ca10047dec4c93bf, type: 2}
   - {fileID: 11400000, guid: 38f1c5e14e8754f3fb0f1c621b4b640c, type: 2}
+  - {fileID: 11400000, guid: 28261da08edc3436ca10047dec4c93bf, type: 2}
+  - {fileID: 11400000, guid: ccb4bc87901554c8192ef2504013fc17, type: 2}
   numberOfClusters: 1
 --- !u!4 &726362376
 Transform:
