@@ -17,3 +17,6 @@ MonoBehaviour:
   score: 50
   asteroidprefab: {fileID: 1157362760724742, guid: bca09be0ad83949d697d2bcbff1ac93a,
     type: 2}
+  asteroidExplosion:
+  - {fileID: 198470749109904484, guid: 562470e18179a4c459cfe0ae76a00307, type: 2}
+  - {fileID: 198895520863070670, guid: 6d25402040538412bb8eb007c2b22ee0, type: 2}

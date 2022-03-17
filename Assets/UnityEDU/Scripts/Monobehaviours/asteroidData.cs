@@ -32,4 +32,13 @@ public class asteroidData : ScriptableObject {
     public string asteroidName;
     public int score;
     public GameObject asteroidprefab;
+
+    public ParticleSystem[] asteroidExplosion = new ParticleSystem[2];
+
+
+    public ParticleSystem getAsteroidParticlePrefab()
+    {
+        int randomIndex = Random.Range(0, 2);
+        return asteroidExplosion[randomIndex];
+    }
 }

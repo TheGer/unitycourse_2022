@@ -8,6 +8,8 @@ public class asteroidController : MonoBehaviour
 	public float asteroidSpeed;
 	public float directionX,directionY;
 
+	private asteroidData asteroidSO;
+
 	public int asteroidLevel;
 
 	public bool hit;
@@ -17,6 +19,8 @@ public class asteroidController : MonoBehaviour
 	void Start()
 	{
 		RandomizeDirection();
+		asteroidSO = GetComponent<asteroidData>();
+
 	}
 
 	public void RandomizeDirection()
@@ -40,8 +44,49 @@ public class asteroidController : MonoBehaviour
 				childAsteroid.transform.localScale =  childAsteroid.transform.localScale * (asteroids[level].asteroidSize * asteroids[level].asteroidScale);
 				childAsteroid.GetComponent<asteroidController>().SpawnChildren(level+1,asteroids);
 			 		childAsteroid.SetActive(false);
-		}
+				}
 		 }
+	}
+	
+	
+	void OnCollisionEnter(Collision col)
+	{
+	
+       
+		if (col.collider.gameObject.CompareTag("Bullet"))
+		{
+            
+			int childCount = transform.childCount;
+			
+            
+			ParticleSystem explosion = Instantiate(asteroidSO.getAsteroidParticlePrefab(),transform);
+			
+			explosion.Play();
+			
+            
+			for (int childCounter=0;childCounter<childCount;childCounter++)
+			{
+				Transform childAsteroid = col.collider.gameObject.transform.GetChild(0);
+				Debug.Log(childAsteroid.gameObject.name);
+
+				childAsteroid.parent = null;
+				childAsteroid.position = transform.position;
+				childAsteroid.GetComponent<asteroidController>().RandomizeDirection();
+				childAsteroid.gameObject.SetActive(true);
+                
+				////   childAsteroid.position = col.gameObject.transform.position;
+				//   
+
+			}
+			// 
+			gameObject.SetActive(false);
+            
+			Destroy(col.collider.gameObject,0.5f);
+         
+              
+		}
+        
+        
 	}
 	
 	// Update is called once per frame
