@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: smallAsteroid
   m_EditorClassIdentifier: 
   asteroidSize: 1
-  asteroidScale: 0.1
+  asteroidScale: 0.5
   asteroidName: small
   score: 10
   asteroidprefab: {fileID: 1001075958796480, guid: 5ad76b66b7cec4762b888598c30ba931,

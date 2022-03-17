@@ -35,19 +35,21 @@ public class bullet : MonoBehaviour {
             {
                 Transform childAsteroid = col.collider.gameObject.transform.GetChild(0);
                 Debug.Log(childAsteroid.gameObject.name);
-                
+
                 childAsteroid.parent = null;
                 childAsteroid.position = transform.position;
                 childAsteroid.GetComponent<asteroidController>().RandomizeDirection();
                 childAsteroid.gameObject.SetActive(true);
+                
                 ////   childAsteroid.position = col.gameObject.transform.position;
                 //   
-                
+
             }
-           // 
-           Destroy(objectsCollidedWith[0].gameObject,1);
+            // 
+            gameObject.SetActive(false);
+            Destroy(col.collider.gameObject,0.5f);
          
-             gameObject.SetActive(false);    
+              
         }
         
         
