@@ -58,9 +58,13 @@ public class asteroidController : MonoBehaviour
 			int childCount = transform.childCount;
 			
             
-			ParticleSystem explosion = Instantiate(asteroidSO.getAsteroidParticlePrefab(),transform);
+			ParticleSystem explosion = asteroidSO.getAsteroidParticlePrefab();
+
+			ParticleSystem instancedExplosion = Instantiate(explosion,transform.position,transform.rotation);
 			
-			explosion.Play();
+			
+			
+			
 			
             
 			for (int childCounter=0;childCounter<childCount;childCounter++)
@@ -78,9 +82,10 @@ public class asteroidController : MonoBehaviour
 
 			}
 			// 
-			gameObject.SetActive(false);
-            
-			Destroy(col.collider.gameObject,0.5f);
+			
+			col.gameObject.SetActive(false);
+			Destroy(gameObject);
+		
          
               
 		}
