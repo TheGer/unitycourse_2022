@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: mediumAsteroid
   m_EditorClassIdentifier: 
   asteroidSize: 2
-  asteroidScale: 2
+  asteroidScale: 0.2
   asteroidName: medium
   score: 25
   asteroidprefab: {fileID: 1155306995128998, guid: d0ff565d1a10f4bcf8221510781942d9,

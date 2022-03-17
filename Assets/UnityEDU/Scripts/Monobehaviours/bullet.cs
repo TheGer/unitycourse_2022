@@ -27,12 +27,13 @@ public class bullet : MonoBehaviour {
         if (col.collider.gameObject.CompareTag("Asteroid"))
         {
             objectsCollidedWith.Add(col.collider);
-         
-           
-           
-            for(int childCounter=0;childCounter<col.collider.gameObject.transform.childCount;childCounter++)
+
+            int childcount = col.collider.gameObject.transform.childCount;
+
+
+            for (int childCounter=0;childCounter<childcount;childCounter++)
             {
-                Transform childAsteroid = col.collider.gameObject.transform.GetChild(childCounter);
+                Transform childAsteroid = col.collider.gameObject.transform.GetChild(0);
                 Debug.Log(childAsteroid.gameObject.name);
                 
                 childAsteroid.parent = null;
@@ -44,7 +45,7 @@ public class bullet : MonoBehaviour {
                 
             }
            // 
-           Destroy(objectsCollidedWith[0],1);
+           Destroy(objectsCollidedWith[0].gameObject,1);
          
              gameObject.SetActive(false);    
         }
