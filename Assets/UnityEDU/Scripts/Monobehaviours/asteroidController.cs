@@ -19,8 +19,7 @@ public class asteroidController : MonoBehaviour
 	void Start()
 	{
 		RandomizeDirection();
-		asteroidSO = GetComponent<asteroidData>();
-
+		asteroidSO = GameManager.Instance.asteroids[asteroidLevel];
 	}
 
 	public void RandomizeDirection()
@@ -66,7 +65,7 @@ public class asteroidController : MonoBehaviour
             
 			for (int childCounter=0;childCounter<childCount;childCounter++)
 			{
-				Transform childAsteroid = col.collider.gameObject.transform.GetChild(0);
+				Transform childAsteroid = transform.GetChild(0);
 				Debug.Log(childAsteroid.gameObject.name);
 
 				childAsteroid.parent = null;
