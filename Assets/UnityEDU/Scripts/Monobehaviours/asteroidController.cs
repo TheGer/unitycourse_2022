@@ -32,7 +32,7 @@ public class asteroidController : MonoBehaviour
 
 	public void SpawnChildren(int level,asteroidData[] asteroids)
 	{
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < LevelInfo.NumberOfChildren; i++)
 		{
 			 	if (level<3){
 			 		GameObject childAsteroid = Instantiate(asteroids[level].asteroidprefab,this.transform);

@@ -7,21 +7,22 @@ using UnityEngine;
 class LevelInfo
 {
 	
-	public string levelProgression = "1:3/2,2:4/2,3:3/3,4:4/3,5:5/3,6:3/4,7:4/4,8:5/4,9:6/4,10:3/5";
+	public static string levelProgression = "1:3/2,2:4/2,3:3/3,4:4/3,5:5/3,6:3/4,7:4/4,8:5/4,9:6/4,10:3/5";
 
 
-	private int currentLevel, numberOfAsteroids, numberOfChildren;
+	public static int CurrentLevel, NumberOfAsteroids, NumberOfChildren;
 
-	void ParseLevelProgression()
+	public static void GetLevel(int level)
 	{
-		foreach (string l in levelProgression.Split(','))
-		{
-			string[] eachLevel = l.Split(':');
-			currentLevel = Int32.Parse(eachLevel[0]);
-			numberOfAsteroids = Int32.Parse(eachLevel[0].Split('/')[0]);
-			numberOfChildren = Int32.Parse(eachLevel[0].Split('/')[1]);
 
-		}
+		string currentLevelData = levelProgression.Split(',')[level - 1];
+		
+		string[] thisLevel = currentLevelData.Split(':');
+		CurrentLevel = Int32.Parse(thisLevel[0]);
+		NumberOfAsteroids = Int32.Parse(thisLevel[0].Split('/')[0]);
+		NumberOfChildren = Int32.Parse(thisLevel[0].Split('/')[1]);
+
+		
 	}
 
 
@@ -33,20 +34,27 @@ public class GameManager : Singleton<GameManager> {
 	
 	// Use this for initialization
 	public asteroidData[] asteroids;
-	public int numberOfClusters;
-	LevelInfo currentLevel;
+	public int currentLevel;
 	
 	
 	
-	void Start () {
-		for (int counter = 0; counter < numberOfClusters; counter++)
+	
+	void Start ()
+	{
+		SetupLevel();
+
+	}
+
+	void SetupLevel()
+	{
+		LevelInfo.GetLevel(currentLevel);
+		
+		for (int counter = 0; counter < LevelInfo.NumberOfAsteroids; counter++)
 		{
 			SpawnCluster();
 		}
 	}
-	
-	
-	
+
 
 	void SpawnCluster()
 	{
@@ -61,8 +69,5 @@ public class GameManager : Singleton<GameManager> {
 		bigAsteroid.GetComponent<asteroidController>().SpawnChildren(r+1,asteroids);
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
 }
