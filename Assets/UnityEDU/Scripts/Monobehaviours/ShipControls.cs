@@ -63,9 +63,30 @@ public class ShipControls : MonoBehaviour
         {
             FireBullet();
         }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            JumpToRandomLocation();
+        }
     }
 
 
+
+    private void JumpToRandomLocation()
+    {
+        Vector3 randomLocation = Vector3.zero;
+        randomLocation = randomLocation.randomPositionOnScreen(Camera.main);
+        Collider[] objects = new Collider[1];
+        if (Physics.OverlapSphereNonAlloc(randomLocation, 1, objects) == 0)
+        {
+            transform.position = randomLocation;
+        }
+        else
+        {
+            JumpToRandomLocation();
+        }
+        
+    }
     //this method controls ship movement and looks for axis direction
 
     private void MoveShip()
