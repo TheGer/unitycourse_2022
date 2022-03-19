@@ -19,8 +19,8 @@ class LevelInfo
 		
 		string[] thisLevel = currentLevelData.Split(':');
 		CurrentLevel = Int32.Parse(thisLevel[0]);
-		NumberOfAsteroids = Int32.Parse(thisLevel[0].Split('/')[0]);
-		NumberOfChildren = Int32.Parse(thisLevel[0].Split('/')[1]);
+		NumberOfAsteroids = Int32.Parse(thisLevel[1].Split('/')[0]);
+		NumberOfChildren = Int32.Parse(thisLevel[1].Split('/')[1]);
 
 		
 	}
@@ -41,6 +41,7 @@ public class GameManager : Singleton<GameManager> {
 	
 	void Start ()
 	{
+		
 		SetupLevel();
 
 	}
