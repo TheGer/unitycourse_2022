@@ -16,7 +16,7 @@ public static class Vector3Extensions {
 			Random.Range(-cameraSizeY, cameraSizeY),
 			Random.Range(-cameraSizeX, cameraSizeX),
 			0f);
-		return randomPosition;
+		return keepOnScreen(randomPosition,currentCamera);
 	}
 
 	
