@@ -75,7 +75,7 @@ public class ShipControls : MonoBehaviour
     private void JumpToRandomLocation()
     {
         Vector3 randomLocation = Vector3.zero;
-        randomLocation = randomLocation.randomPositionOnScreen(Camera.main);
+        randomLocation = randomLocation.randomPositionOnScreen(Camera.main,new Vector3(0.5f,0.5f));
         Collider[] objects = new Collider[1];
         if (Physics.OverlapSphereNonAlloc(randomLocation, 1, objects) == 0)
         {

@@ -6,24 +6,48 @@ public static class Vector3Extensions {
 
 	// Use this for initialization
 
-	public static Vector3 randomPositionOnScreen(this Vector3 pos,Camera currentCamera)
+	public static Vector3 randomPositionOnScreen(this Vector3 pos,Camera currentCamera,Vector3? margin = new Vector3?())
 	{
 		Vector3 randomPosition;
 		float cameraSizeY = currentCamera.orthographicSize;
 		float cameraSizeX = cameraSizeY * currentCamera.aspect;
+		
 
 		randomPosition = new Vector3(
 			Random.Range(-cameraSizeY, cameraSizeY),
 			Random.Range(-cameraSizeX, cameraSizeX),
 			0f);
-		return keepOnScreen(randomPosition,currentCamera);
+		return keepOnScreen(randomPosition,currentCamera,margin);
 	}
 
 	
-	public static Vector3 keepOnScreen(this Vector3 pos, Camera currentCamera)
+	public static Vector3 keepOnScreen(this Vector3 pos, Camera currentCamera,Vector3? margin = new Vector3?())
 	{
+		if (margin != null)
+		{
+		
+			float cameraSize = currentCamera.orthographicSize;
+
+			float limity = cameraSize - margin.Value.y;
+			float limitx = cameraSize * currentCamera.aspect - margin.Value.x;
+				
+			pos.y = Mathf.Clamp(pos.y,
+				-limity,
+				limity);
+			
+			pos.x = Mathf.Clamp(pos.y,
+				-limitx,
+				limitx);
+			
+		
+		}
+		
+		
 		Vector3 currentViewportPoint = currentCamera.WorldToViewportPoint(pos);
 
+
+		
+	
 		if (currentViewportPoint.x > 1)
 		{
 			pos = new Vector3(
