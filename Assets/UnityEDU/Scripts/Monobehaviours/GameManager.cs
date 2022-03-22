@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
+
+
 class LevelInfo
 {
 	
 	public static string levelProgression = "1:3/2,2:4/2,3:3/3,4:4/3,5:5/3,6:3/4,7:4/4,8:5/4,9:6/4,10:3/5";
 
-
+	
 	public static int CurrentLevel, NumberOfAsteroids, NumberOfChildren;
 
 	public static void GetLevel(int level)
@@ -33,9 +36,9 @@ public class GameManager : Singleton<GameManager> {
 
 	
 	// Use this for initialization
-	public asteroidData[] asteroids;
+	public asteroidSO[] asteroids;
 	public int currentLevel;
-	
+	public int asteroidsHit,score;
 	
 	
 	

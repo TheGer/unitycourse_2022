@@ -8,7 +8,9 @@ public class asteroidController : MonoBehaviour
 	public float asteroidSpeed;
 	public float directionX,directionY;
 
-	private asteroidData asteroidSO;
+	private asteroidSO asteroidSO;
+	
+	
 
 	public int asteroidLevel;
 
@@ -20,6 +22,7 @@ public class asteroidController : MonoBehaviour
 	{
 		RandomizeDirection();
 		asteroidSO = GameManager.Instance.asteroids[asteroidLevel];
+		
 	}
 
 	public void RandomizeDirection()
@@ -30,7 +33,7 @@ public class asteroidController : MonoBehaviour
 	}
 
 
-	public void SpawnChildren(int level,asteroidData[] asteroids)
+	public void SpawnChildren(int level,asteroidSO[] asteroids)
 	{
 		for (int i = 0; i < LevelInfo.NumberOfChildren; i++)
 		{
@@ -64,7 +67,7 @@ public class asteroidController : MonoBehaviour
 			
 			
 			
-			
+			AchievementManager.Instance.AchievementAttained();
 			
             
 			for (int childCounter=0;childCounter<childCount;childCounter++)

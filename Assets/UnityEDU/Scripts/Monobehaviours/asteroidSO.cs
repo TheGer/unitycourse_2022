@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "New Asteroid", menuName = "Asteroid Data", order = 1)]
-public class asteroidData : ScriptableObject {
+public class asteroidSO : ScriptableObject {
   
     //Cannot inherit singleton class as only one class can be inherited
     //Might need to implement this manually
