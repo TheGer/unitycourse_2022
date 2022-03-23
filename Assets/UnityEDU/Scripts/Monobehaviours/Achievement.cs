@@ -5,12 +5,13 @@ using UnityEngine;
 
 
 
-    [Serializable]
-    public class Achievement:IAchievable
-    {
-        public string achievementName, achievementEvent, achievementConsequence;
 
-        public Dictionary<string,bool> propertiestoCheck = new Dictionary<string,bool>();
+    [Serializable]
+    public class Achievement
+    {
+        public string achievementName;
+
+        public List<string> propertiestoCheck = new List<string>();
         public int achievementStep, achievementSteps;
         public bool isCumulative, isLocked, isCompleted;
 
@@ -19,7 +20,7 @@ using UnityEngine;
 
         public Achievement Poll()
         {
-            foreach (string propertyToCheck in propertiestoCheck.Keys)
+            foreach (string propertyToCheck in propertiestoCheck)
             {
                 if (GameManager.Instance.monitorableProperties[propertyToCheck])
                 {

@@ -11,4 +11,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7461d3417abda4c81bfb8e4684f15326, type: 3}
   m_Name: achievementData
   m_EditorClassIdentifier: 
-  achievements: []
+  achievements:
+  - achievementName: 
+    achievementEvent: 
+    achievementConsequence: 
+    propertiestoCheck:
+    - properyName: asteroidsHit
+      propertyValue: 1
+    achievementStep: 0
+    achievementSteps: 0
+    isCumulative: 0
+    isLocked: 0
+    isCompleted: 0
+  - achievementName: 
+    achievementEvent: 
+    achievementConsequence: 
+    propertiestoCheck: []
+    achievementStep: 0
+    achievementSteps: 0
+    isCumulative: 0
+    isLocked: 0
+    isCompleted: 0
+  - achievementName: 
+    achievementEvent: 
+    achievementConsequence: 
+    propertiestoCheck: []
+    achievementStep: 0
+    achievementSteps: 0
+    isCumulative: 0
+    isLocked: 0
+    isCompleted: 0
+  - achievementName: 
+    achievementEvent: 
+    achievementConsequence: 
+    propertiestoCheck: []
+    achievementStep: 0
+    achievementSteps: 0
+    isCumulative: 0
+    isLocked: 0
+    isCompleted: 0
+  - achievementName: 
+    achievementEvent: 
+    achievementConsequence: 
+    propertiestoCheck: []
+    achievementStep: 0
+    achievementSteps: 0
+    isCumulative: 0
+    isLocked: 0
+    isCompleted: 0
