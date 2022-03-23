@@ -37,13 +37,26 @@ public class GameManager : Singleton<GameManager> {
 	
 	// Use this for initialization
 	public asteroidSO[] asteroids;
-	public int currentLevel;
-	public int asteroidsHit,score;
 	
 	
+	public int currentLevel = 0; 
+	public int shotsFired = 0;
+	public int asteroidsHit = 0;
+	public int score = 0;
+	public int luckyShots=0;
+	
+	public Dictionary<string, bool> monitorableProperties;
 	
 	void Start ()
 	{
+		monitorableProperties = new Dictionary<string, bool>();
+		monitorableProperties.Add("currentLevel",false);
+		monitorableProperties.Add("shotsFired",false);
+		monitorableProperties.Add("asteroidsHit",false);
+		monitorableProperties.Add("score",false);
+		monitorableProperties.Add("luckyShot",false);
+
+		
 		
 		SetupLevel();
 

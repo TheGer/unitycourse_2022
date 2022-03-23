@@ -64,11 +64,12 @@ public class asteroidController : MonoBehaviour
 			ParticleSystem explosion = asteroidSO.getAsteroidParticlePrefab();
 
 			ParticleSystem instancedExplosion = Instantiate(explosion,transform.position,transform.rotation);
+
+			GameManager.Instance.asteroidsHit++;
 			
-			
-			
-			AchievementManager.Instance.AchievementAttained();
-			
+			//subscribing to achievement here
+			if (GameManager.Instance.asteroidsHit == 1)
+				GameManager.Instance.monitorableProperties["asteroidsHit"]=true;
             
 			for (int childCounter=0;childCounter<childCount;childCounter++)
 			{

@@ -9,7 +9,7 @@ public class bullet : MonoBehaviour {
     //a bool to store whether or not this has collided
 
     public bool collided = false;
-
+    public bool wrappedScreen = false;
     private void FixedUpdate()
     {
         if (transform.position.keepOnScreen(Camera.main) != transform.position)

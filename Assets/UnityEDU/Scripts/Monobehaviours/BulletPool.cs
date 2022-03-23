@@ -8,6 +8,7 @@ public class BulletPool : Singleton<BulletPool>
    
     public List<GameObject> bulletPool;
     
+    
     [Header("Set the bullet Prefab here")][SerializeField]
     private GameObject bullet;
     
