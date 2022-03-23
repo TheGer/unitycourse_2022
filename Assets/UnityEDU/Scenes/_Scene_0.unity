@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -237,6 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 726362376}
   - component: {fileID: 726362374}
+  - component: {fileID: 726362375}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -260,6 +261,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28261da08edc3436ca10047dec4c93bf, type: 2}
   - {fileID: 11400000, guid: ccb4bc87901554c8192ef2504013fc17, type: 2}
   currentLevel: 1
+  shotsFired: 0
+  asteroidsHit: 0
+  score: 0
+  luckyShots: 0
+--- !u!114 &726362375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726362373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c85befadc2594aba87dbc1417f51254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievements: {fileID: 11400000, guid: 6bb1d3ce497faf34f84758a4ae0bf790, type: 2}
 --- !u!4 &726362376
 Transform:
   m_ObjectHideFlags: 0
@@ -392,7 +409,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 8b6f247a29883442da79ca21dee86d11, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0

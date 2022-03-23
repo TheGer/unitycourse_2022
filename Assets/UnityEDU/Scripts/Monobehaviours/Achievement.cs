@@ -22,6 +22,7 @@ using UnityEngine;
         {
             foreach (string propertyToCheck in propertiestoCheck)
             {
+                
                 if (GameManager.Instance.monitorableProperties[propertyToCheck])
                 {
                     if (!this.isCompleted)

@@ -13,19 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievements:
   - achievementName: 
-    achievementEvent: 
-    achievementConsequence: 
     propertiestoCheck:
-    - properyName: asteroidsHit
-      propertyValue: 1
-    achievementStep: 0
-    achievementSteps: 0
+    - asteroidsHit
+    achievementStep: 1
+    achievementSteps: 1
     isCumulative: 0
     isLocked: 0
-    isCompleted: 0
+    isCompleted: 1
   - achievementName: 
-    achievementEvent: 
-    achievementConsequence: 
     propertiestoCheck: []
     achievementStep: 0
     achievementSteps: 0
@@ -33,8 +28,6 @@ MonoBehaviour:
     isLocked: 0
     isCompleted: 0
   - achievementName: 
-    achievementEvent: 
-    achievementConsequence: 
     propertiestoCheck: []
     achievementStep: 0
     achievementSteps: 0
@@ -42,8 +35,6 @@ MonoBehaviour:
     isLocked: 0
     isCompleted: 0
   - achievementName: 
-    achievementEvent: 
-    achievementConsequence: 
     propertiestoCheck: []
     achievementStep: 0
     achievementSteps: 0
@@ -51,8 +42,6 @@ MonoBehaviour:
     isLocked: 0
     isCompleted: 0
   - achievementName: 
-    achievementEvent: 
-    achievementConsequence: 
     propertiestoCheck: []
     achievementStep: 0
     achievementSteps: 0

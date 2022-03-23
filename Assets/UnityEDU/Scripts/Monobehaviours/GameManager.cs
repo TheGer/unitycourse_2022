@@ -39,13 +39,15 @@ public class GameManager : Singleton<GameManager> {
 	public asteroidSO[] asteroids;
 	
 	
-	public int currentLevel = 0; 
+	public int currentLevel = 1; 
 	public int shotsFired = 0;
 	public int asteroidsHit = 0;
 	public int score = 0;
 	public int luckyShots=0;
 	
 	public Dictionary<string, bool> monitorableProperties;
+
+
 	
 	void Start ()
 	{
@@ -75,7 +77,7 @@ public class GameManager : Singleton<GameManager> {
 
 	void SpawnCluster()
 	{
-		Debug.Log(asteroids);
+
 		int r = 0; //Random.Range(0, asteroids.Length);
 		GameObject bigAsteroid = Instantiate(asteroids[r].asteroidprefab);
 		

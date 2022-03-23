@@ -34,6 +34,7 @@ public class AchievementManager:Singleton<AchievementManager>
 		{
 			foreach (Achievement a in achievements.achievements)
 			{
+	
 				if (a.Poll() != null)
 				{
 					StartCoroutine(ShowPopUp(a, 2f));
@@ -54,6 +55,7 @@ public class AchievementManager:Singleton<AchievementManager>
 		coroutineRunning = true;
 		Debug.Log("popup showing"+currentAchievement.achievementName);
 		currentAchievement.isCompleted = true;
+		
 		achievementPopup.GetComponent<Animator>().SetTrigger("animate");
 		yield return new WaitForSecondsRealtime(duration);
 		achievementPopup.GetComponentInChildren<Text>().enabled = false;
