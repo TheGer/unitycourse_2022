@@ -4,10 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public interface IAchievable
-{
-	
-}
+
 
 public class AchievementManager:Singleton<AchievementManager>
 {
@@ -20,6 +17,16 @@ public class AchievementManager:Singleton<AchievementManager>
 
 	private GameObject achievementPopup;
 
+	[SerializeField]
+	public enum ACTIONS
+	{
+		CurrentLevel = 0,
+		ShotsFired = 1,
+		AsteroidsHit = 2,
+		Score = 3 ,
+		LuckyShot = 4
+	}
+	
 	public void Start()
 	{
 		achievementPopup = GameObject.Find("AchievementPopup");

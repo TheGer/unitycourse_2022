@@ -6,7 +6,6 @@ using UnityEngine;
 
 
 
-
 class LevelInfo
 {
 	
@@ -45,20 +44,18 @@ public class GameManager : Singleton<GameManager> {
 	public int score = 0;
 	public int luckyShots=0;
 	
-	public Dictionary<string, bool> monitorableProperties;
+	public Dictionary<AchievementManager.ACTIONS, bool> monitorableProperties;
 
 
 	
 	void Start ()
 	{
-		monitorableProperties = new Dictionary<string, bool>();
-		monitorableProperties.Add("currentLevel",false);
-		monitorableProperties.Add("shotsFired",false);
-		monitorableProperties.Add("asteroidsHit",false);
-		monitorableProperties.Add("score",false);
-		monitorableProperties.Add("luckyShot",false);
-
-		
+		monitorableProperties = new Dictionary<AchievementManager.ACTIONS, bool>();
+		monitorableProperties.Add(AchievementManager.ACTIONS.CurrentLevel,false);
+		monitorableProperties.Add(AchievementManager.ACTIONS.ShotsFired,false);
+		monitorableProperties.Add(AchievementManager.ACTIONS.AsteroidsHit,false);
+		monitorableProperties.Add(AchievementManager.ACTIONS.Score,false);
+		monitorableProperties.Add(AchievementManager.ACTIONS.LuckyShot,false);
 		
 		SetupLevel();
 

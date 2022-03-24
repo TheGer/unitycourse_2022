@@ -69,7 +69,7 @@ public class asteroidController : MonoBehaviour
 			
 			//subscribing to achievement here
 			if (GameManager.Instance.asteroidsHit == 1)
-				GameManager.Instance.monitorableProperties["asteroidsHit"]=true;
+				GameManager.Instance.monitorableProperties[AchievementManager.ACTIONS.AsteroidsHit]=true;
             
 			for (int childCounter=0;childCounter<childCount;childCounter++)
 			{
