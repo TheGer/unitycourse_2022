@@ -12,37 +12,22 @@ MonoBehaviour:
   m_Name: achievementData
   m_EditorClassIdentifier: 
   achievements:
-  - achievementName: 
-    propertiestoCheck:
-    - asteroidsHit
-    achievementStep: 1
-    achievementSteps: 1
-    isCumulative: 0
-    isLocked: 0
-    isCompleted: 1
-  - achievementName: 
-    propertiestoCheck: []
+  - achievementName: first
+    propertiestoCheck: 02000000
     achievementStep: 0
     achievementSteps: 0
     isCumulative: 0
     isLocked: 0
     isCompleted: 0
   - achievementName: 
-    propertiestoCheck: []
+    propertiestoCheck: 
     achievementStep: 0
     achievementSteps: 0
     isCumulative: 0
     isLocked: 0
     isCompleted: 0
   - achievementName: 
-    propertiestoCheck: []
-    achievementStep: 0
-    achievementSteps: 0
-    isCumulative: 0
-    isLocked: 0
-    isCompleted: 0
-  - achievementName: 
-    propertiestoCheck: []
+    propertiestoCheck: 
     achievementStep: 0
     achievementSteps: 0
     isCumulative: 0
